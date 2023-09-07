@@ -1,25 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Roboto:wght@300;500;700;900&display=swap');
+
+html{
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+
+}
+
 .game-button{
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap: 52px;
-    margin: 15em;   
+    gap: 400px;
+    margin: 50em;   
+    
 }
 
+.score{
+    text-align: center;
+    font-size: 600px;
+}
 
-
-.img{
-
-    background-color: red;
-    width: 200px;
-    height: 200px;
+.hand-symbols{
+    width: 900px;
+    height: auto;
 }
 
 .option-button{
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+
     margin-top: 1em;
-    width: 100px;
-    height: 50px;
+    width: 500px;
+    font-size: 80px;
+    height: 250px;
     background-color: #fff;
     border-radius: 8%;
     border: 1px solid #fff;
