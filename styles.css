@@ -19,12 +19,28 @@ html{
 .score{
     text-align: center;
     font-size: 600px;
+   
+}
+
+.result{
+    text-align: center;
+    font-size: 100px;
+}
+
+#player{
+    color: green;
+}
+
+#AI{
+    color: red
 }
 
 .hand-symbols{
     width: 900px;
     height: auto;
 }
+
+
 
 .option-button{
     font-family: 'Roboto', sans-serif;
@@ -39,7 +55,7 @@ html{
     border: 1px solid #fff;
     box-shadow: 0px 0px 0px 5px rgba(0,0,0,0.1);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
 
 }
 
