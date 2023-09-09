@@ -1,3 +1,7 @@
+let gameReady = true    // Used to prevent the user from spamming the buttons;
+
+
+
 function getComputerChoice(){
     const choiceArray = ["Rock","Paper","Scissors"]
     return choiceArray[Math.floor(Math.random() * choiceArray.length)]
@@ -12,8 +16,9 @@ function playRound(playerSelection, computerSelection){
         if (computerSelection == "scissors"){
             let result = document.querySelector('.result');
             result.textContent = "Rock beats Scissors"
-
+            gameReady = false;
             setTimeout(function(){
+                gameReady = true;
                 result.textContent = "Make your choice!";
             }, timeToWait);
 
@@ -25,16 +30,18 @@ function playRound(playerSelection, computerSelection){
         else if (computerSelection == "rock"){
             let result = document.querySelector('.result');
             result.textContent = "Draw!"
-
+            gameReady = false;
             setTimeout(function(){
+                gameReady = true;
                 result.textContent = "Make your choice!";
             }, timeToWait);
         } 
         else {
             let result = document.querySelector('.result');
             result.textContent = "Paper beats Rock"
-
+            gameReady = false;
             setTimeout(function(){
+                gameReady = true;
                 result.textContent = "Make your choice!";
             }, timeToWait);
 
@@ -46,8 +53,9 @@ function playRound(playerSelection, computerSelection){
         if (computerSelection == "Paper"){
             let result = document.querySelector('.result');
             result.textContent = "Scissors beats Paper"
-
+            gameReady = false;
             SetTimeout(function(){
+                gameReady = true;
                 result.textContent = "Make your choice!";
             }, timeToWait);
             
@@ -57,16 +65,19 @@ function playRound(playerSelection, computerSelection){
         else if (computerSelection == "scissors"){
             let result = document.querySelector('.result');
             result.textContent = "Draw!"
-
+            gameReady = false;
             setTimeout(function(){
+                gameReady = true;
                 result.textContent = "Make your choice!";
             }, timeToWait);
         } 
         else {
             let result = document.querySelector('.result');
             result.textContent = "Rock beats Scissors"
+            gameReady = false;
 
             setTimeout(function(){
+                gameReady = true;
                 result.textContent = "Make your choice!";
             }, timeToWait);
 
@@ -79,8 +90,10 @@ function playRound(playerSelection, computerSelection){
         if (computerSelection == "rock"){
             let result = document.querySelector('.result');
             result.textContent = "Paper beats Rock"
+            gameReady = false;
 
             setTimeout(function(){
+                gameReady = true;
                 result.textContent = "Make your choice!";
             }, timeToWait);
 
@@ -90,16 +103,20 @@ function playRound(playerSelection, computerSelection){
         else if (computerSelection == "paper"){
             let result = document.querySelector('.result');
             result.textContent = "Draw!"
+            gameReady = false;
 
             setTimeout(function(){
+                gameReady = true;
                 result.textContent = "Make your choice!";
             }, timeToWait);
         } 
         else {
             let result = document.querySelector('.result');
             result.textContent = "Scissors beats Paper"
+            gameReady = false;
 
             setTimeout(function(){
+                gameReady = true;
                 result.textContent = "Make your choice!";
             }, timeToWait);
 
@@ -114,12 +131,18 @@ function playRound(playerSelection, computerSelection){
 
 
 function game(){
+
+    document.querySelector('.result').innerHTML = "Make your choice! <br> First to 5 wins!";
+
     const buttons = document.querySelectorAll('.option-button');
 
     buttons.forEach((button) => {
         
         button.addEventListener('click', () => {
-            console.log(playRound(button.id, getComputerChoice()))
+
+            if (gameReady == false) return;
+
+            playRound(button.id, getComputerChoice());
 
             if (parseInt(document.querySelector('#player').textContent) == 5){
                 let result = document.querySelector('.result');
@@ -151,4 +174,3 @@ function game(){
 
 game()
 
-document.querySelector('.result').innerHTML = "Make your choice! <br> First to 5 wins!";
