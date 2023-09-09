@@ -62,3 +62,12 @@ function game(){
     
 }
 
+const buttons = document.querySelectorAll('.option-button');
+
+buttons.forEach((button) => {
+    
+    button.addEventListener('click', () => {
+        console.log(playRound(button.id, getComputerChoice()))
+    });
+});
+
